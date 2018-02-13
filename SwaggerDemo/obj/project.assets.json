@@ -12658,11 +12658,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Code\\repo\\WebApiSwaggerDemo\\SwaggerDemo\\SwaggerDemo.csproj",
+      "projectUniqueName": "E:\\Code\\repo\\AspNetSwagger\\SwaggerDemo\\SwaggerDemo.csproj",
       "projectName": "SwaggerDemo",
-      "projectPath": "E:\\Code\\repo\\WebApiSwaggerDemo\\SwaggerDemo\\SwaggerDemo.csproj",
+      "projectPath": "E:\\Code\\repo\\AspNetSwagger\\SwaggerDemo\\SwaggerDemo.csproj",
       "packagesPath": "C:\\Users\\vivek\\.nuget\\packages\\",
-      "outputPath": "E:\\Code\\repo\\WebApiSwaggerDemo\\SwaggerDemo\\obj\\",
+      "outputPath": "E:\\Code\\repo\\AspNetSwagger\\SwaggerDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

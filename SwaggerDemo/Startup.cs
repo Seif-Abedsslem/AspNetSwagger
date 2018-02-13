@@ -2,7 +2,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
+using System.IO;
+
 namespace SwaggerDemo
 {
     public class Startup
@@ -20,6 +23,10 @@ namespace SwaggerDemo
             services.AddSwaggerGen(config =>
             {
                 config.SwaggerDoc("v1", new Info { Title = "My Api", Version = "V1" });
+                var applicationBasePath = PlatformServices.Default.Application.ApplicationBasePath;
+
+                var XmlDocFilePath = Path.Combine(applicationBasePath, "SwaggerDemo.xml");
+                config.IncludeXmlComments(XmlDocFilePath);
             });
 
             services.AddMvc();
@@ -29,14 +36,9 @@ namespace SwaggerDemo
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseSwagger();
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
             app.UseMvc();
-            app.UseSwaggerUI(config => { config.SwaggerEndpoint("v1/swagger.json", "My API V1"); });
+            app.UseSwaggerUI(
+                config => { config.SwaggerEndpoint("v1/swagger.json", "My API V1"); });
         }
     }
 }
